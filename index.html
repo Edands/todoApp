@@ -14,36 +14,39 @@
 		<div id="page-container">
             <header><h1>TODO APP</h1></header>
 			<div id="input-container">
+				<button id="make-new-btn" type="button" onclick="makeNewRecord()">NEW RECORD</button>
 				<input id="record-title" type="text" placeholder="Title" />
-
-				<button type="button">SAVE</button>
+				<button id="save-new-btn" type="button" onclick="saveNewRecord()">SAVE</button>
 			</div>
 
 			<div id="stored-records">
-				<div styles="order: 2;" class="recorded">
+				<div id="record01" class="recorded">
                     <input class="checkbox" type="checkbox" name="checkbox"></input>
                     <span class="title">Activities 1</span>
-                    <span class="creation-date">16/06/20</span>
-                    <button class="edit-btn" type="button">edit</button>
-                    <button class="remove-btn" type="button" onclick="">remove</button>
-                    <div id="edit-form">
+					<span class="creation-date">16/06/20</span>
+					<button class="edit-btn" type="button">edit</button>
+					<button class="remove-btn" type="button" onclick="">remove</button>  
+					<br>
+					<div id="edit-form" style="display:none;">
                         <input type="text">
                         <button type="button">save</button>
-                        
                     </div>
+                                
 
 				</div>
-				<div styles="order: 1;" class="recorded">
+				<div id="record02" class="recorded">
 					<input class="checkbox" type="checkbox" name="checkbox"></input>
 					<span class="title">Activities 2</span>
-                    <span class="creation-date">16/06/20</span>
-                    <button class="edit-btn" type="button">edit</button>
-                    <button class="remove-btn" type="button" onclick="">remove</button>
-                    <div id="edit-form">
+					<span class="creation-date">16/06/20</span>
+					<button class="edit-btn" type="button">edit</button>
+					<button class="remove-btn" type="button" onclick="">remove</button>   
+					<br>
+					<div id="edit-form" style="display:none;">
                         <input type="text">
-                        <button type="button">save</button>
-                    
-                    </div>
+						<button type="button">save</button>
+					</div>
+                                 
+                                     
 				</div>
 			</div>
 		</div>

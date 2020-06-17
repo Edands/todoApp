@@ -1,8 +1,5 @@
 #page-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	text-align: center;
 }
 
 #input-container {
@@ -10,16 +7,29 @@
 	margin-bottom: 25px;
 }
 
+#record-title {
+	display: none;
+}
+
+#save-new-btn {
+	display: none;
+}
+
 #stored-container {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	flex-direction: row;
+	flex-direction: column;
+	flex-flow: column;
 }
 
 .recorded {
-	display: inherit;
 	border: 2px;
 	border-color: black;
 	padding: 10px;
+	border: 1px solid;
+	margin: 10px;
+}
+
+#record01 {
+	order: 2;
 }

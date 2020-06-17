@@ -1,5 +1,5 @@
 /* 
-TDDO: 
+  TDDO: 
     Here's what the app should do:
 
     When the user first loads the page, the list of to-do items should appear on the page, matching what's in the "database".
@@ -13,4 +13,20 @@ TDDO:
     When someone clicks the "edit" button next to a record, a form should appear, populated with the existing information for that record.
 
     When that form is saved, the HTML and the "database" of the appropriate record with the edited information shoud be updated.
- */
+*/
+
+var recordTitle = document.getElementById("record-title");
+var recordSave = document.getElementById("save-new-btn");
+var recordNew = document.getElementById("make-new-btn");
+
+function makeNewRecord() {
+	recordTitle.style.setProperty("display", "block");
+	recordSave.style.setProperty("display", "block");
+	recordNew.style.setProperty("display", "none");
+}
+
+function saveNewRecord() {
+	recordTitle.style.setProperty("display", "none");
+	recordSave.style.setProperty("display", "none");
+	recordNew.style.setProperty("display", "block");
+}
