@@ -1,0 +1,25 @@
+#page-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#input-container {
+	margin: 50px;
+	margin-bottom: 25px;
+}
+
+#stored-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.recorded {
+	display: inherit;
+	border: 2px;
+	border-color: black;
+	padding: 10px;
+}

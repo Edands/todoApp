@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TODO APP</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<nav>
+			<a></a>
+        </nav>
+        
+		<div id="page-container">
+            <header><h1>TODO APP</h1></header>
+			<div id="input-container">
+				<input id="record-title" type="text" placeholder="Title" />
+
+				<button type="button">SAVE</button>
+			</div>
+
+			<div id="stored-records">
+				<div styles="order: 2;" class="recorded">
+                    <input class="checkbox" type="checkbox" name="checkbox"></input>
+                    <span class="title">Activities 1</span>
+                    <span class="creation-date">16/06/20</span>
+                    <button class="edit-btn" type="button">edit</button>
+                    <button class="remove-btn" type="button" onclick="">remove</button>
+                    <div id="edit-form">
+                        <input type="text">
+                        <button type="button">save</button>
+                        
+                    </div>
+
+				</div>
+				<div styles="order: 1;" class="recorded">
+					<input class="checkbox" type="checkbox" name="checkbox"></input>
+					<span class="title">Activities 2</span>
+                    <span class="creation-date">16/06/20</span>
+                    <button class="edit-btn" type="button">edit</button>
+                    <button class="remove-btn" type="button" onclick="">remove</button>
+                    <div id="edit-form">
+                        <input type="text">
+                        <button type="button">save</button>
+                    
+                    </div>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+		<script src="seed-data.js"></script>
+	</body>
+</html>
