@@ -32,23 +32,32 @@ function saveNewRecord() {
 }
 
 function editRecord(caller) {
-	let ParentElement = caller.parentNode.id;
+	let parentElement = caller.parentNode.id;
 	let editForm = document
-		.getElementById(ParentElement)
-		.getElementsByClassName("edit-form");
-	console.log(editForm);
-	editForm.style.setProperty("display", "block");
+		.getElementById(parentElement)
+		.getElementsByClassName("edit-form")[0];
+	if (editForm.style["display"] == "none") {
+		editForm.style["display"] = "block";
+	} else {
+		editForm.style["display"] = "none";
+	}
 }
 
 function removeRecord(caller) {
 	let parentElement = caller.parentNode.id;
 	document.getElementById(parentElement).remove();
+	console.log(`Record ${parentElement} removed`);
 }
 
 function saveForm(caller) {
-	let ParentElement = caller.parentNode.id;
+	let parentElement = caller.parentNode.parentNode.id;
 	let editForm = document
-		.getElementById(ParentElement)
-		.getElementsByClassName("edit-form");
-	editForm.style.setProperty("display", "none");
+		.getElementById(parentElement)
+		.getElementsByClassName("edit-form")[0];
+	if (editForm.style["display"] == "none") {
+		editForm.style["display"] = "block";
+	} else {
+		editForm.style["display"] = "none";
+	}
+	console.log("Form saved");
 }
