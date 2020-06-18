@@ -32,6 +32,23 @@ function saveNewRecord() {
 }
 
 function editRecord(caller) {
+	let ParentElement = caller.parentNode.id;
+	let editForm = document
+		.getElementById(ParentElement)
+		.getElementsByClassName("edit-form");
+	console.log(editForm);
+	editForm.style.setProperty("display", "block");
+}
+
+function removeRecord(caller) {
 	let parentElement = caller.parentNode.id;
-	document.querySelector("parentElement.remove-btn");
+	document.getElementById(parentElement).remove();
+}
+
+function saveForm(caller) {
+	let ParentElement = caller.parentNode.id;
+	let editForm = document
+		.getElementById(ParentElement)
+		.getElementsByClassName("edit-form");
+	editForm.style.setProperty("display", "none");
 }
