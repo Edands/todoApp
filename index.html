@@ -20,6 +20,20 @@
 			</div>
 
 			<div id="stored-records">
+				<div id="record00" class="recorded" style="display: none;">
+                    <input class="checkbox" type="checkbox" name="checkbox"></input>
+                    <span class="title">Activities 1</span>
+					<span class="creation-date">16/06/20</span>
+					<button class="edit-btn" type="button" onclick="editRecord(this);">edit</button>
+					<button class="remove-btn" type="button" onclick="removeRecord(this);">remove</button>  
+					<br>
+					<div class="edit-form" style="display:none;">
+                        <input type="text">
+                        <button type="button" onclick="saveForm(this);">save</button>
+                    </div>
+                                
+
+				</div>
 				<div id="record01" class="recorded">
                     <input class="checkbox" type="checkbox" name="checkbox"></input>
                     <span class="title">Activities 1</span>

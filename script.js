@@ -19,6 +19,10 @@ var recordTitle = document.getElementById("record-title");
 var recordSave = document.getElementById("save-new-btn");
 var recordNew = document.getElementById("make-new-btn");
 
+function curentDate() {
+	return new Date().toLocaleString();
+}
+
 function makeNewRecord() {
 	recordTitle.style.setProperty("display", "block");
 	recordSave.style.setProperty("display", "block");
@@ -26,6 +30,18 @@ function makeNewRecord() {
 }
 
 function saveNewRecord() {
+	let input = document.getElementById("record-title").value;
+	let recordTemplate = document.getElementById("record00");
+	let recordClone = recordTemplate.cloneNode(true);
+	let storedRecordsDiv = document.getElementById("stored-records");
+	// TODO: Get a different id
+	storedRecordsDiv.appendChild(recordClone);
+	let newRecord = storedRecordsDiv.lastChild;
+	// TODO: Change info in newRecord
+	newRecord.querySelector(".title").innerHTML = `${input}`;
+	newRecord.querySelector(".creation-date").innerHTML = curentDate();
+	newRecord.style.setProperty("display", "block");
+
 	recordTitle.style.setProperty("display", "none");
 	recordSave.style.setProperty("display", "none");
 	recordNew.style.setProperty("display", "block");
