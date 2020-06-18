@@ -30,3 +30,8 @@ function saveNewRecord() {
 	recordSave.style.setProperty("display", "none");
 	recordNew.style.setProperty("display", "block");
 }
+
+function editRecord(caller) {
+	let parentElement = caller.parentNode.id;
+	document.querySelector("parentElement.remove-btn");
+}
