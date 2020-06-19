@@ -19,14 +19,23 @@ function loadStoredRecords() {
 	var localStoreItems = localStorage.length;
 	console.log(localStoreItems);
 
-	for (i = 0; i <= localStoreItems; i++) {
-		let storageKeys = Object.keys(localStorage);
-		let storedRecordsDiv = document.getElementById("stored-records");
-		let storageValues = localStorage.getItem(storageKeys[i]);
-		storedRecordsDiv.appendChild(storageValues);
-		console.log[`appended ${storageKeys[i]} to stored-records`];
+	if (localStoreItems != 0) {
+		for (i = 0; i < localStoreItems; i++) {
+			let storageKeys = Object.keys(localStorage);
+			let storedRecordsDiv = document.getElementById("stored-records");
+			let storageValues = localStorage.getItem(storageKeys[i]);
+			let stringToNode = document
+				.createRange()
+				.createContextualFragment(storageValues);
+			storedRecordsDiv.appendChild(stringToNode);
+			console.log[`appended ${storageKeys[i]} to stored-records`];
+		}
+	} else {
+		console.log("theres is not items stored");
 	}
 }
+
+loadStoredRecords();
 
 var recordTitle = document.getElementById("record-title");
 var recordSave = document.getElementById("save-new-btn");
@@ -49,9 +58,8 @@ function makeNewRecord() {
 	recordNew.style.setProperty("display", "none");
 }
 
-// TODO: Function to save locally the records
-
 // Gets the input text, clones a hidden template and appends it to stored-records with a unique id
+
 function saveNewRecord() {
 	// Gets the inptup value and clones hidden template
 	let input = document.getElementById("record-title").value;
@@ -64,12 +72,14 @@ function saveNewRecord() {
 	//  Change info in newRecord
 	newRecord.querySelector(".title").innerHTML = `${input}`;
 	newRecord.querySelector(".creation-date").innerHTML = curentDate();
+	newRecord.id = uid();
 	newRecordID = newRecord.id;
-	newRecordID = uid();
 	newRecord.style.setProperty("display", "block");
 
 	//Save to localStorage
-	newRecordHTML = document.getElementById(newRecordID).outerHTML;
+	console.log(newRecordID);
+	let newRecordHTML = document.getElementById(String(newRecordID)).outerHTML;
+	console.log(newRecordHTML);
 	localStorage.setItem(newRecordID, newRecordHTML);
 	console.log(`${newRecordID} saved to local storage`);
 
@@ -97,6 +107,7 @@ function editRecord(caller) {
 
 function removeRecord(caller) {
 	let parentElement = caller.parentNode.id;
+	localStorage.removeItem(parentElement);
 	document.getElementById(parentElement).remove();
 	console.log(`Record ${parentElement} removed`);
 }
