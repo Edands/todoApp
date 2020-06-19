@@ -15,6 +15,19 @@
     When that form is saved, the HTML and the "database" of the appropriate record with the edited information shoud be updated.
 */
 
+function loadStoredRecords() {
+	var localStoreItems = localStorage.length;
+	console.log(localStoreItems);
+
+	for (i = 0; i <= localStoreItems; i++) {
+		let storageKeys = Object.keys(localStorage);
+		let storedRecordsDiv = document.getElementById("stored-records");
+		let storageValues = localStorage.getItem(storageKeys[i]);
+		storedRecordsDiv.appendChild(storageValues);
+		console.log[`appended ${storageKeys[i]} to stored-records`];
+	}
+}
+
 var recordTitle = document.getElementById("record-title");
 var recordSave = document.getElementById("save-new-btn");
 var recordNew = document.getElementById("make-new-btn");
@@ -51,8 +64,14 @@ function saveNewRecord() {
 	//  Change info in newRecord
 	newRecord.querySelector(".title").innerHTML = `${input}`;
 	newRecord.querySelector(".creation-date").innerHTML = curentDate();
-	newRecord.id = uid();
+	newRecordID = newRecord.id;
+	newRecordID = uid();
 	newRecord.style.setProperty("display", "block");
+
+	//Save to localStorage
+	newRecordHTML = document.getElementById(newRecordID).outerHTML;
+	localStorage.setItem(newRecordID, newRecordHTML);
+	console.log(`${newRecordID} saved to local storage`);
 
 	// Return input field to its original state
 	recordTitle.style.setProperty("display", "none");
