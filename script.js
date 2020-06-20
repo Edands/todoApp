@@ -12,9 +12,12 @@
 
     When someone clicks the "edit" button next to a record, a form should appear, populated with the existing information for that record.
 
-    When that form is saved, the HTML and the "database" of the appropriate record with the edited information shoud be updated.
+	When that form is saved, the HTML and the "database" of the appropriate record with the edited information shoud be updated.
+	
+	****** EDIT CONSOLE LOGS ************************
 */
 
+// Load previously stored records in localStorage
 function loadStoredRecords() {
 	var localStoreItems = localStorage.length;
 	console.log(localStoreItems);
@@ -34,8 +37,6 @@ function loadStoredRecords() {
 		console.log("theres is not items stored");
 	}
 }
-
-loadStoredRecords();
 
 var recordTitle = document.getElementById("record-title");
 var recordSave = document.getElementById("save-new-btn");
@@ -96,6 +97,7 @@ function editRecord(caller) {
 	let editForm = document
 		.getElementById(parentElement)
 		.getElementsByClassName("edit-form")[0];
+
 	if (editForm.style["display"] == "none") {
 		editForm.style["display"] = "block";
 	} else {
@@ -107,28 +109,39 @@ function editRecord(caller) {
 
 function removeRecord(caller) {
 	let parentElement = caller.parentNode.id;
+
 	localStorage.removeItem(parentElement);
 	document.getElementById(parentElement).remove();
+
 	console.log(`Record ${parentElement} removed`);
 }
 
 // Save the edits into the form TODO: Integrate with localStorage and refactor
 
 function saveForm(caller) {
-	let parentElement = caller.parentNode.parentNode.id;
-	let editForm = document
-		.getElementById(parentElement)
-		.getElementsByClassName("edit-form")[0];
+	// Get record of edit form
+	let parentElementID = caller.parentNode.parentNode.id;
+	let parentElement = document.getElementById(parentElementID);
+	let editForm = parentElement.getElementsByClassName("edit-form")[0];
 	let editInput = editForm.getElementsByClassName("edit-input")[0].value;
 
-	document
-		.getElementById(parentElement)
-		.getElementsByClassName("title")[0].innerHTML = editInput;
+	// Edit new title and new date
+	parentElement.getElementsByClassName("title")[0].innerHTML = editInput;
+	parentElement.querySelector(".creation-date").innerHTML = curentDate();
 
+	// Return the form to its original state
 	if (editForm.style["display"] == "none") {
 		editForm.style["display"] = "block";
 	} else {
 		editForm.style["display"] = "none";
 	}
+
+	// Update info in localStorage
+	console.log(parentElementID);
+	let newRecordHTML = parentElement.outerHTML;
+	console.log(newRecordHTML);
+	localStorage.setItem(parentElementID, newRecordHTML);
+	console.log(`${parentElementID} edited in local storage`);
+
 	console.log("Form saved");
 }
