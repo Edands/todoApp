@@ -9,17 +9,17 @@
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
 
 	</head>
-	<body onload="loadStoredRecords();">
+	<body onload="start();">
 		<nav>
 			<a></a>
         </nav>
-        <header><h1>TODO APP</h1></header>
+        <header><h1>todoAPP</h1><span id="live-clock"></span></header>
 		
 		<div id="page-container">
 			
 			<div id="stored-records">
 				<div id="record00" class="recorded" style="display: none;">
-                    <input class="checkbox" type="checkbox" name="checkbox"></input>
+                    <input class="checkbox" onclick="doneRecord(this);" type="checkbox" name="checkbox"></input>
                     <span class="title">Activities 1</span>
 					<span class="creation-date">16/06/20</span>
 					<br>
@@ -36,7 +36,7 @@
 
 				</div>
 				<div id="record01" class="recorded">
-                    <input class="checkbox" type="checkbox" name="checkbox"></input>
+                    <input class="checkbox" onclick="doneRecord(this);" type="checkbox" name="checkbox"></input>
                     <span class="title">Activities 1</span>
 					<span class="creation-date">16/06/20</span>
 					<br>
@@ -53,7 +53,7 @@
 
 				</div>
 				<div id="record02" class="recorded">
-					<input class="checkbox" type="checkbox" name="checkbox"></input>
+					<input class="checkbox" onclick="doneRecord(this);" type="checkbox" name="checkbox"></input>
 					<span class="title">Activities 2</span>
 					<span class="creation-date">16/06/20</span>
 					<br>

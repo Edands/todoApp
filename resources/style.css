@@ -9,12 +9,18 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
-	text-align: center;
+	text-align: left;
 }
 
 header h1 {
 	width: 100%;
-	margin: 5px;
+	margin: 10px 10px 10px 50px;
+}
+
+#live-clock {
+	margin: 10px 50px auto;
+	display: inline-block;
+	justify-content: center;
 }
 
 #page-container {
@@ -73,13 +79,18 @@ header h1 {
 }
 
 .recorded {
-	font-size: 10pt;
+	font-size: 12pt;
 	display: block;
 	justify-content: left;
 	text-align: left;
 	border: none;
 	background-color: #f5f5f5f5;
-	margin-bottom: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title,
+.creation-date {
+	display: inline-block;
 }
 
 .edit-and-remove {
@@ -101,6 +112,7 @@ header h1 {
 	margin: 10px;
 	margin-top: 5px;
 	transition-duration: 0.4s;
+	position: static;
 }
 
 .edit-btn {
@@ -128,9 +140,12 @@ header h1 {
 }
 
 .recorded span {
-	display: flex;
-	text-align: center;
-	justify-content: center;
+	display: inline-block;
+	text-align: left;
+	justify-content: left;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
 }
 
 .edit-form {

@@ -19,10 +19,18 @@ function loadStoredRecords() {
 	}
 }
 
-var recordTitle = document.getElementById("record-title");
-var recordSave = document.getElementById("save-new-btn");
-var recordNew = document.getElementById("make-new-btn");
-var recordEdit = document.getElementById("edit-r-btn");
+// Make a live clock
+function displayClock() {
+	let display = new Date().toLocaleTimeString();
+	document.getElementById("live-clock").innerHTML = display;
+	setTimeout(displayClock, 1000);
+}
+
+// Load this functions onload
+function start() {
+	loadStoredRecords();
+	displayClock();
+}
 
 // Generates a random unique id for new records
 const uid = function () {
@@ -148,4 +156,20 @@ function saveForm(caller) {
 	console.log(`${parentElementID} edited in local storage`);
 
 	console.log("Form saved");
+}
+
+//
+function doneRecord(caller) {
+	let parentElementID = caller.parentNode.id;
+	let parentElement = document.getElementById(parentElementID);
+	let editTitle = parentElement.getElementsByClassName("title")[0];
+	let editDate = parentElement.getElementsByClassName("creation-date")[0];
+
+	if (editTitle.style["text-decoration-line"] == "none") {
+		editTitle.style.setProperty("text-decoration-line", "line-through");
+		editDate.style.setProperty("text-decoration-line", "line-through");
+	} else {
+		editTitle.style.setProperty("text-decoration-line", "none");
+		editDate.style.setProperty("text-decoration-line", "none");
+	}
 }
