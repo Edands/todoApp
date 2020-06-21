@@ -139,7 +139,7 @@ header h1 {
 	border-color: red;
 }
 
-.recorded span {
+.recorded label {
 	display: inline-block;
 	text-align: left;
 	justify-content: left;
