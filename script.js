@@ -1,22 +1,3 @@
-/* 
-  TDDO: 
-    Here's what the app should do:
-
-    When the user first loads the page, the list of to-do items should appear on the page, matching what's in the "database".
-
-    When someone clicks the "add record" button, a new record should be added to the HTML list using default (hard-coded or slightly randomized) information.
-    A new record should also be added to the "database".
-
-    When someone clicks the "delete" button next to a record, that record will removed from the list of items in the HTML. 
-    That record should also be removed from the "database".
-
-    When someone clicks the "edit" button next to a record, a form should appear, populated with the existing information for that record.
-
-	When that form is saved, the HTML and the "database" of the appropriate record with the edited information shoud be updated.
-	
-	****** EDIT CONSOLE LOGS ************************
-*/
-
 // Load previously stored records in localStorage
 function loadStoredRecords() {
 	var localStoreItems = localStorage.length;
@@ -59,6 +40,22 @@ function makeNewRecord() {
 	recordNew.style.setProperty("display", "none");
 }
 
+// Shows the reoe and edit buttons
+function editButtons() {
+	editBtn = document.getElementsByClassName("edit-btn");
+	reBtn = document.getElementsByClassName("remove-btn");
+
+	for (let index = 0; index < editBtn.length; index++) {
+		if (editBtn[index].style["display"] == "none") {
+			editBtn[index].style.setProperty("display", "flex");
+			reBtn[index].style.setProperty("display", "flex");
+		} else {
+			editBtn[index].style.setProperty("display", "none");
+			reBtn[index].style.setProperty("display", "none");
+		}
+	}
+}
+
 // Gets the input text, clones a hidden template and appends it to stored-records with a unique id
 
 function saveNewRecord() {
@@ -93,13 +90,13 @@ function saveNewRecord() {
 // Shows the edit record form
 
 function editRecord(caller) {
-	let parentElement = caller.parentNode.id;
+	let parentElement = caller.parentNode.parentNode.id;
 	let editForm = document
 		.getElementById(parentElement)
 		.getElementsByClassName("edit-form")[0];
 
 	if (editForm.style["display"] == "none") {
-		editForm.style["display"] = "block";
+		editForm.style["display"] = "flex";
 	} else {
 		editForm.style["display"] = "none";
 	}
@@ -108,7 +105,7 @@ function editRecord(caller) {
 // Removes the record TODO: make a confirmation popup
 
 function removeRecord(caller) {
-	let parentElement = caller.parentNode.id;
+	let parentElement = caller.parentNode.parentNode.id;
 
 	localStorage.removeItem(parentElement);
 	document.getElementById(parentElement).remove();
@@ -131,7 +128,7 @@ function saveForm(caller) {
 
 	// Return the form to its original state
 	if (editForm.style["display"] == "none") {
-		editForm.style["display"] = "block";
+		editForm.style["display"] = "flex";
 	} else {
 		editForm.style["display"] = "none";
 	}

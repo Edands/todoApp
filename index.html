@@ -5,28 +5,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>TODO APP</title>
 		<link rel="stylesheet" href="style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+
 	</head>
 	<body onload="loadStoredRecords();">
 		<nav>
 			<a></a>
         </nav>
-        
+        <header><h1>TODO APP</h1></header>
+		
 		<div id="page-container">
-            <header><h1>TODO APP</h1></header>
-			<div id="input-container">
-				<button id="make-new-btn" type="button" onclick="makeNewRecord();">NEW RECORD</button>
-				<input id="record-title" type="text" placeholder="Title" />
-				<button id="save-new-btn" type="button" onclick="saveNewRecord();">SAVE</button>
-			</div>
-
+			
 			<div id="stored-records">
 				<div id="record00" class="recorded" style="display: none;">
                     <input class="checkbox" type="checkbox" name="checkbox"></input>
                     <span class="title">Activities 1</span>
 					<span class="creation-date">16/06/20</span>
-					<button class="edit-btn" type="button" onclick="editRecord(this);">edit</button>
-					<button class="remove-btn" type="button" onclick="removeRecord(this);">remove</button>  
 					<br>
+					<div class="edit-and-remove">
+						<button class="edit-btn" type="button" onclick="editRecord(this);">edit</button>
+						<button class="remove-btn" type="button" onclick="removeRecord(this);">remove</button>
+					</div> 
+				
 					<div class="edit-form" style="display:none;">
                         <input class="edit-input" type="text">
                         <button type="button" onclick="saveForm(this);">save</button>
@@ -38,9 +39,12 @@
                     <input class="checkbox" type="checkbox" name="checkbox"></input>
                     <span class="title">Activities 1</span>
 					<span class="creation-date">16/06/20</span>
-					<button class="edit-btn" type="button" onclick="editRecord(this);">edit</button>
-					<button class="remove-btn" type="button" onclick="removeRecord(this);">remove</button>  
 					<br>
+					<div class="edit-and-remove">
+						<button class="edit-btn" type="button" onclick="editRecord(this);">edit</button>
+						<button class="remove-btn" type="button" onclick="removeRecord(this);">remove</button>
+					</div> 
+					
 					<div class="edit-form" style="display:none;">
                         <input class="edit-input" type="text">
                         <button type="button" onclick="saveForm(this);">save</button>
@@ -52,17 +56,27 @@
 					<input class="checkbox" type="checkbox" name="checkbox"></input>
 					<span class="title">Activities 2</span>
 					<span class="creation-date">16/06/20</span>
-					<button class="edit-btn" type="button" onclick="editRecord(this);">edit</button>
-					<button class="remove-btn" type="button" onclick="removeRecord(this);">remove</button>   
 					<br>
+					<div class="edit-and-remove">
+						<button class="edit-btn" type="button" onclick="editRecord(this);">edit</button>
+						<button class="remove-btn" type="button" onclick="removeRecord(this);">remove</button>
+					</div>    
+					
 					<div class="edit-form" style="display:none;">
                         <input class="edit-input" type="text">
 						<button type="button" onclick="saveForm(this);">save</button>
 					</div>
-                                 
-                                     
-				</div>
-			</div>
+
+
+			    </div>
+			</div>             
+		</div>  
+		         
+		<div id="input-container">
+				<button id="make-new-btn" class="button" type="button" onclick="makeNewRecord();">New Record</button>
+				<input id="record-title" type="text" placeholder="Title" />
+				<button id="save-new-btn" class="button"  type="button" onclick="saveNewRecord();">Save</button>
+				<button id="edit-r-btn" class="button" type="button" onclick="editButtons();">Edit Records</button>
 		</div>
 
 		<script src="script.js"></script>

@@ -1,35 +1,145 @@
-#page-container {
+header {
+	display: flex;
+	justify-content: space-around;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	background-color: #3150a5;
+	color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	text-align: center;
 }
 
-#input-container {
-	margin: 50px;
-	margin-bottom: 25px;
+header h1 {
+	width: 100%;
+	margin: 5px;
 }
 
+#page-container {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+}
+
+#input-container {
+	background-color: white;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+}
+
+#input-container .button {
+	margin: 25px;
+}
+
+.button {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	background-color: #3150a5;
+	color: white;
+	border: none;
+	padding: 5px 7px 5px 7px;
+	transition-duration: 0.4s;
+	font-size: 12pt;
+}
+
+.button:hover {
+	background-color: white;
+	color: #3150a5;
+	border: solid 1px;
+	border-color: #3150a5;
+}
+
+#save-new-btn,
 #record-title {
 	display: none;
 }
 
-#save-new-btn {
-	display: none;
+#stored-records {
+	margin-top: 100px;
+	overflow-y: auto;
+	margin-bottom: 100px;
 }
 
-#stored-container {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	flex-flow: column;
+.checkbox {
 }
 
 .recorded {
-	border: 2px;
-	border-color: black;
-	padding: 10px;
-	border: 1px solid;
-	margin: 10px;
+	font-size: 10pt;
+	display: block;
+	justify-content: left;
+	text-align: left;
+	border: none;
+	background-color: #f5f5f5f5;
+	margin-bottom: 10px;
 }
 
-#record01 {
-	order: 2;
+.edit-and-remove {
+	bottom: 0;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: center;
+}
+
+.remove-btn,
+.edit-btn {
+	border: none;
+	padding: 5px 7px 5px 7px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 10pt;
+	display: none;
+	margin: 10px;
+	margin-top: 5px;
+}
+
+.edit-btn {
+	background-color: green;
+	color: white;
+	transition-duration: 0.4s;
+}
+
+.remove-btn {
+	background-color: red;
+	color: white;
+	transition-duration: 0.4s;
+}
+
+.edit-btn:hover {
+	background-color: white;
+	color: green;
+	border: solid 1px;
+	border-color: green;
+}
+
+.remove-btn:hover {
+	background-color: white;
+	color: red;
+	border: solid 1px;
+	border-color: red;
+}
+
+.recorded span {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+
+.edit-form {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+
+.edit-form button {
+	background-color: #3150a5;
+	color: white;
+	border: none;
+	margin-left: 10px;
 }
