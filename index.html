@@ -29,7 +29,7 @@
 					</div> 
 				
 					<div class="edit-form" style="display:none;">
-                        <input class="edit-input" type="text">
+                        <input class="edit-input" type="text" autocomplete="off">
                         <button type="button" onclick="saveForm(this);">save</button>
                     </div>
                                 
@@ -37,7 +37,7 @@
 				</div>
 				<div id="record01" class="recorded">
                     <input id="record01Check" class="checkbox" onclick="doneRecord(this);" type="checkbox" name="checkbox"></input>
-                    <label for="record01Check" class="title" style="text-decoration-line: none;">Activities 1</label>
+                    <label for="record01Check" class="title" style="text-decoration-line: none;">Example 1</label>
 					<label for="record01Check" class="creation-date" style="text-decoration-line: none;">16/06/20</label>
 					<br>
 					<div class="edit-and-remove">
@@ -46,7 +46,7 @@
 					</div> 
 					
 					<div class="edit-form" style="display:none;">
-                        <input class="edit-input" type="text">
+                        <input class="edit-input" type="text" autocomplete="off">
                         <button type="button" onclick="saveForm(this);">save</button>
                     </div>
                                 
@@ -54,7 +54,7 @@
 				</div>
 				<div id="record02" class="recorded">
 					<input id="record02Check" class="checkbox" onclick="doneRecord(this);" type="checkbox" name="checkbox"></input>
-                    <label for="record02Check" class="title" style="text-decoration-line: none;">Activities 1</label>
+                    <label for="record02Check" class="title" style="text-decoration-line: none;">Add more stuff to do</label>
 					<label for="record02Check" class="creation-date" style="text-decoration-line: none;">16/06/20</label>
 					<br>
 					<div class="edit-and-remove">
@@ -63,7 +63,7 @@
 					</div>    
 					
 					<div class="edit-form" style="display:none;">
-                        <input class="edit-input" type="text">
+                        <input class="edit-input" type="text" autocomplete="off" >
 						<button type="button" onclick="saveForm(this);">save</button>
 					</div>
 
@@ -73,7 +73,7 @@
 		</div>
 		
 		<div id="input-container" style="display:none;">
-			<input id="record-title" type="text" placeholder="Title" />
+			<input id="record-title" type="text" placeholder="What do you have to do?" autocomplete="off" />
 			<button id="save-new-btn" class="button"  type="button" onclick="saveNewRecord();">Save</button>
 		</div>
 		         

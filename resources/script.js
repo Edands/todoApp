@@ -167,7 +167,7 @@ function saveForm(caller) {
 	console.log("Form saved");
 }
 
-//
+// Adds a line-through when the checkbox is clicked
 function doneRecord(caller) {
 	let parentElementID = caller.parentNode.id;
 	let parentElement = document.getElementById(parentElementID);

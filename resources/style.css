@@ -93,6 +93,10 @@ header h1 {
 	display: inline-block;
 }
 
+.creation-date {
+	font-size: 10pt;
+}
+
 .edit-and-remove {
 	bottom: 0;
 	display: flex;
@@ -165,13 +169,23 @@ header h1 {
 	display: flex;
 	margin: 0;
 	padding: 0;
+	border: 0;
+	border-bottom: 1px solid #3150a5;
+	background: transparent;
+	font-size: 12pt;
+	outline: none;
 }
 
 #record-title {
 	margin: 0;
 	padding: 0;
+	border: 0;
 	text-align: left;
 	justify-content: left;
+	border-bottom: 1px solid #3150a5;
+	background: transparent;
+	font-size: 12pt;
+	outline: none;
 }
 
 #save-new-btn {
