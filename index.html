@@ -70,12 +70,15 @@
 
 			    </div>
 			</div>             
-		</div>  
+		</div>
+		
+		<div id="input-container" style="display:none;">
+			<input id="record-title" type="text" placeholder="Title" />
+			<button id="save-new-btn" class="button"  type="button" onclick="saveNewRecord();">Save</button>
+		</div>
 		         
-		<div id="input-container">
+		<div id="edit-container">
 				<button id="make-new-btn" class="button" type="button" onclick="makeNewRecord();">New Record</button>
-				<input id="record-title" type="text" placeholder="Title" />
-				<button id="save-new-btn" class="button"  type="button" onclick="saveNewRecord();">Save</button>
 				<button id="edit-r-btn" class="button" type="button" onclick="editButtons();">Edit Records</button>
 		</div>
 

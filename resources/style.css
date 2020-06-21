@@ -26,14 +26,25 @@ header h1 {
 	background-color: white;
 	position: fixed;
 	bottom: 0;
-	display: flex;
-	flex-direction: row;
 	text-align: center;
 	justify-content: center;
 	width: 100%;
 }
 
 #input-container .button {
+	margin: 25px;
+}
+
+#edit-container {
+	background-color: white;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+}
+
+#edit-container .button {
 	margin: 25px;
 }
 
@@ -53,11 +64,6 @@ header h1 {
 	color: #3150a5;
 	border: solid 1px;
 	border-color: #3150a5;
-}
-
-#save-new-btn,
-#record-title {
-	display: none;
 }
 
 #stored-records {
@@ -94,18 +100,17 @@ header h1 {
 	display: none;
 	margin: 10px;
 	margin-top: 5px;
+	transition-duration: 0.4s;
 }
 
 .edit-btn {
 	background-color: green;
 	color: white;
-	transition-duration: 0.4s;
 }
 
 .remove-btn {
 	background-color: red;
 	color: white;
-	transition-duration: 0.4s;
 }
 
 .edit-btn:hover {
@@ -139,4 +144,21 @@ header h1 {
 	color: white;
 	border: none;
 	margin-left: 10px;
+}
+
+.edit-input {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+#record-title {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	justify-content: left;
+}
+
+#save-new-btn {
+	justify-content: center;
 }

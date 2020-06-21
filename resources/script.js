@@ -22,6 +22,7 @@ function loadStoredRecords() {
 var recordTitle = document.getElementById("record-title");
 var recordSave = document.getElementById("save-new-btn");
 var recordNew = document.getElementById("make-new-btn");
+var recordEdit = document.getElementById("edit-r-btn");
 
 // Generates a random unique id for new records
 const uid = function () {
@@ -35,9 +36,12 @@ function curentDate() {
 
 // Shows the input field for new records
 function makeNewRecord() {
-	recordTitle.style.setProperty("display", "block");
-	recordSave.style.setProperty("display", "block");
-	recordNew.style.setProperty("display", "none");
+	document
+		.getElementById("input-container")
+		.style.setProperty("display", "block");
+	document
+		.getElementById("edit-container")
+		.style.setProperty("display", "none");
 }
 
 // Shows the reoe and edit buttons
@@ -82,9 +86,12 @@ function saveNewRecord() {
 	console.log(`${newRecordID} saved to local storage`);
 
 	// Return input field to its original state
-	recordTitle.style.setProperty("display", "none");
-	recordSave.style.setProperty("display", "none");
-	recordNew.style.setProperty("display", "block");
+	document
+		.getElementById("input-container")
+		.style.setProperty("display", "none");
+	document
+		.getElementById("edit-container")
+		.style.setProperty("display", "block");
 }
 
 // Shows the edit record form
