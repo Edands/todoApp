@@ -79,11 +79,20 @@ function saveNewRecord() {
 	storedRecordsDiv.appendChild(recordClone);
 	let newRecord = storedRecordsDiv.lastChild;
 
-	//  Change info in newRecord
-	newRecord.querySelector(".title").innerHTML = `${input}`;
-	newRecord.querySelector(".creation-date").innerHTML = curentDate();
+	let newRecordTitle = newRecord.querySelector(".title");
+	let newRecordDate = newRecord.querySelector(".creation-date");
+	let newRecordCheck = newRecord.getElementsByClassName("checkbox")[0];
+
+	//  Update info in newRecord
+	newRecordTitle.innerHTML = `${input}`;
+	newRecordDate.innerHTML = curentDate();
 	newRecord.id = uid();
 	newRecordID = newRecord.id;
+
+	newRecordCheck.setAttribute("id", `${newRecordID}Check`);
+	newRecordTitle.setAttribute("for", `${newRecordID}Check`);
+	newRecordDate.setAttribute("for", `${newRecordID}Check`);
+
 	newRecord.style.setProperty("display", "block");
 
 	//Save to localStorage
@@ -158,7 +167,7 @@ function saveForm(caller) {
 	console.log("Form saved");
 }
 
-//
+// Adds a line-through when the checkbox is clicked
 function doneRecord(caller) {
 	let parentElementID = caller.parentNode.id;
 	let parentElement = document.getElementById(parentElementID);
